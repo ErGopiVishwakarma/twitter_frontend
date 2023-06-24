@@ -16,7 +16,7 @@ function App() {
    const storeUserInfoFun = async() =>{
 	if( id && getToken){
 		try {
-			const {data} = await axios.get(`http://localhost:8080/user/userInfo/${id}`)
+			const {data} = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/user/userInfo/${id}`)
 			data.token = getToken
 			localStorage.setItem('twitteruser',JSON.stringify(data))
 			setSearchParams({userID:'',token:''})

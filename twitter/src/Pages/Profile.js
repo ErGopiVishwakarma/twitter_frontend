@@ -39,7 +39,7 @@ const Profile = () => {
           Authorization: `Bearer ${token.token}`
         }
       }
-      const { data } = await axios.get(`http://localhost:8080/user/profile/${userId}`, config)
+      const { data } = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/user/profile/${userId}`, config)
       console.log(data.user[0])
       setPost(data.posts)
       setProfile(data.user[0])
@@ -65,7 +65,7 @@ const Profile = () => {
           Authorization: `Bearer ${token.token}`
         }
       }
-      const { data } = await axios.put(`http://localhost:8080/user/follow`, {
+      const { data } = await axios.put(`${process.env.REACT_APP_BACKEND_URL}/user/follow`, {
         followerId: profile._id
       }, config)
       setAgainRender(prev => !prev)
@@ -85,7 +85,7 @@ const Profile = () => {
           Authorization: `Bearer ${token.token}`
         }
       }
-      const { data } = await axios.put(`http://localhost:8080/user/unfollow`, {
+      const { data } = await axios.put(`${process.env.REACT_APP_BACKEND_URL}/user/unfollow`, {
         unfollowId: profile._id
       }, config)
       setAgainRender(prev => !prev)
@@ -105,7 +105,7 @@ const Profile = () => {
           Authorization: `Bearer ${token.token}`
         }
       }
-      const { data } = await axios.put(`http://localhost:8080/user/bgpicchange`, {
+      const { data } = await axios.put(`${process.env.REACT_APP_BACKEND_URL}/user/bgpicchange`, {
         bgpic: parameter
       }, config)
       setAgainRender(prev => !prev)

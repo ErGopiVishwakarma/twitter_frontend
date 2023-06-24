@@ -57,7 +57,7 @@ const CommentModal = ({ children,user,postId ,setComment}) => {
                     Authorization: `Bearer ${token.token}`
                 }
             }
-            const data = await axios.put(`http://localhost:8080/post/comment`, {
+            const data = await axios.put(`${process.env.REACT_APP_BACKEND_URL}/post/comment`, {
                 text,
                 postId
             }, config)

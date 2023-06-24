@@ -67,7 +67,7 @@ const TweetModal = ({children}) => {
                     Authorization: `Bearer ${token.token}`
                 }
             }
-            const data = await axios.post(`http://localhost:8080/post/createpost`, {
+            const data = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/post/createpost`, {
                 content: text,
                 picture: pic,
             }, config)

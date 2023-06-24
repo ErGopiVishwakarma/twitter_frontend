@@ -19,7 +19,7 @@ const LCSF = ({ postId,user }) => {
                     Authorization: `Bearer ${token.token}`
                 }
             }
-            const data = await axios.put(`http://localhost:8080/post/like`, {
+            const data = await axios.put(`${process.env.REACT_APP_BACKEND_URL}/post/like`, {
                 postId
             }, config)
             if (data?.status === 200) {
@@ -43,7 +43,7 @@ const LCSF = ({ postId,user }) => {
                     Authorization: `Bearer ${token.token}`
                 }
             }
-            const data = await axios.post(`http://localhost:8080/post/likerender`, {
+            const data = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/post/likerender`, {
                 postId
             }, config)
             if (data?.status === 200) {

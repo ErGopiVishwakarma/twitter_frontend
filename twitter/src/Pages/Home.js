@@ -27,7 +27,7 @@ const Home = () => {
           Authorization: `Bearer ${token.token}`
         }
       }
-      const { data } = await axios.get(`http://localhost:8080/post/getallpost`, config)
+      const { data } = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/post/getallpost`, config)
       console.log(data)
       setPost(data)
       setLoading(false)

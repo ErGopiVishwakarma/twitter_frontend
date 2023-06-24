@@ -8,7 +8,7 @@ import axios from 'axios'
 const Auth = () => {
 
   const googleAuth = () =>{
-    window.open('http://localhost:8080/auth/google/callback','_self')
+    window.open(`${process.env.REACT_APP_BACKEND_URL}/auth/google/callback`,'_self')
   }
   return (
     <Flex w="100%" h='100vh' direction={{ base: 'column', md: 'column', lg: 'row' }}  >

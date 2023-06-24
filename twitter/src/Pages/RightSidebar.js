@@ -25,7 +25,7 @@ const RightSidebar = () => {
                     Authorization: `Bearer ${token.token}`
                 }
             }
-            const { data } = await axios.get(`http://localhost:8080/user/searchuser?search=${search}`, config)
+            const { data } = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/user/searchuser?search=${search}`, config)
             setSearchResult(data)
             setLoading(false)
 

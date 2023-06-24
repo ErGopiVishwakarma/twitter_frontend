@@ -18,7 +18,7 @@ const FollowingUserPost = () => {
                     Authorization: `Bearer ${token.token}`
                 }
             }
-            const { data } = await axios.get(`http://localhost:8080/post/followinguserpost`, config)
+            const { data } = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/post/followinguserpost`, config)
             console.log(data)
             setPost(data)
             setLoading(false)

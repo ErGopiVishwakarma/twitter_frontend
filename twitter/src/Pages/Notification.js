@@ -27,7 +27,7 @@ const Notification = () => {
           Authorization: `Bearer ${token.token}`
         }
       }
-      const { data } = await axios.get(`https://crazy-dove-vest.cyclic.app/user/searchuser?search=${search}`, config)
+      const { data } = await axios.get(`https://curious-plum-stole.cyclic.app/user/searchuser?search=${search}`, config)
       setSearchResult(data)
       setLoading(false)
 

@@ -19,7 +19,7 @@ const PostDetail = () => {
                     Authorization: `Bearer ${token.token}`
                 }
             }
-            const { data } = await axios.get(`https://crazy-dove-vest.cyclic.app/post/getallpost`, config)
+            const { data } = await axios.get(`https://curious-plum-stole.cyclic.app/post/getallpost`, config)
             //   console.log(data)
             const value = data.filter(el => el._id === id)
             setPost(value)

@@ -18,7 +18,7 @@ const FollowingUserPost = () => {
                     Authorization: `Bearer ${token.token}`
                 }
             }
-            const { data } = await axios.get(`https://crazy-dove-vest.cyclic.app/post/followinguserpost`, config)
+            const { data } = await axios.get(`https://curious-plum-stole.cyclic.app/post/followinguserpost`, config)
             console.log(data)
             setPost(data)
             setLoading(false)

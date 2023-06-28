@@ -71,7 +71,7 @@ const Explore = () => {
     <>
       <Flex>
         <Flex px="20px" overflowY={'auto'} h="100vh" position={'relative'} direction={'column'} gap='20px'
-          w={{ base: '100%', sm: '100%', md: '100%', lg: '60%' }}
+          w={{ base: '100%', sm: '100%', md: '100%', lg: '65%' }} 
           css={{
             '&::-webkit-scrollbar': {
               width: '4px',
@@ -92,12 +92,14 @@ const Explore = () => {
               <InputLeftElement pointerEvents='none'>
                 <BiSearch color='gray.200' />
               </InputLeftElement>
-              <Input type='text' h={{base:'33px',md:''}} placeholder='search' borderRadius={'50px'} fontSize={'18px'} variant={'filled'} bg='gray.200' onChange={(e) => searchUser(e.target.value)} />
+              <Input type='text' h={{base:'33px',md:''}} placeholder='search'
+               borderRadius={'50px'} fontSize={'18px'} variant={'filled'} bg='gray.200' onFocus={()=>setDisplay(true)} onBlur={()=>setDisplay(false)} onChange={(e) => searchUser(e.target.value)} />
             </InputGroup>
             <FiSettings fontSize={'25px'} />
           </Flex>
           {/* showing search result here  */}
-          <Flex direction={'column'} position={'absolute'} left={{ base: 0, md: '' }} zIndex={12} w={{ base: '100%', sm: '100%', md: '400px', lg: '560px' }} bg='white' boxShadow={'rgba(0, 0, 0, 0.24) 0px 3px 8px'} mt='40px' >
+          <Flex direction={'column'} position={'absolute'} left={{ base: 0, md: '' }}  w='container-xl' mx='20px' display={display?"flex":'none'} minH={'100px'}
+           zIndex={12}  bg='white' boxShadow={'rgba(0, 0, 0, 0.24) 0px 3px 8px'} mt='42px' >
             {
               loading ? <Flex justify={'center'}><Spinner size='md' /> </Flex> :
                 searchResult?.map(el => (
@@ -119,15 +121,16 @@ const Explore = () => {
                 trendingArr.map((el, ind) => (
                   <Flex direction={'column'} _hover={{ backgroundColor: 'gray.200' }} px='15px' py='10px' w='100%' key={ind}  >
                     <Flex justifyContent={'space-between'} w='100%' >
-                      <Text color="gray.600" fontSize={'13px'}>This is text</Text>
+                      <Text fontSize={'13px'} fontWeight={'bold'} color="gray.600">This is text</Text>
                       <Heading fontSize='20px' cursor={'pointer'}>...</Heading>
                     </Flex>
                     <Heading fontSize={'15px'}>#Gopi vishwakarma</Heading>
-                    <Text color="gray.600" fontSize={'13px'}>25.5k tweets</Text>
+                    <Text fontSize={'13px'} fontWeight={'bold'} color="gray.600">25.5k tweets</Text>
                   </Flex>
                 ))
               }
-              <Heading fontSize={'18px'} color='blue.400' px='15px' py='10px' w='100%' _hover={{ backgroundColor: 'gray.200' }} cursor={'pointer'} >Show more</Heading>
+              <Heading fontSize={'18px'} color='blue.400' px='15px' py='10px' w='100%' 
+              _hover={{ backgroundColor: 'gray.200' }} cursor={'pointer'} >Show more</Heading>
             </Flex>
           </Flex>
 
@@ -142,7 +145,7 @@ const Explore = () => {
         </Flex>
 
 
-        <Box w='40%' display={{ base: 'none', sm: 'none', md: 'none', lg: 'block' }} pt='10px'>
+        <Box w='35%' display={{ base: 'none', sm: 'none', md: 'none', lg: 'block' }} pt='10px'>
           <Flex direction={'column'} p='15px' gap='20px' bg='gray.100'>
             <Heading fontSize={'22px'}>Who to follow</Heading>
             {

@@ -52,7 +52,7 @@ const Home = () => {
   return (
     <Flex w='100%'>
       {/* tab panal  */}
-      <Flex direction={'column'} w={{ base: '100%', sm: '100%', md: '100%', lg: '60%' }}
+      <Flex direction={'column'} w={{ base: '100%', sm: '100%', md: '100%', lg: '65%' }}
         overflowY={'auto'} h="100vh" position={'relative'}
         css={{
           '&::-webkit-scrollbar': {
@@ -69,17 +69,18 @@ const Home = () => {
         <Box w="100%" h="60px" bg="white" display={{ base: 'none', sm: 'none', md: 'block' }} >
           <Heading fontSize={'22px'} px='20px' pt='10px'>Home</Heading>
         </Box>
-        <Flex gap='130px' alignContent={'center'} px='20px' textColor={'blue.400'} display={{ base: 'flex', sm: 'flex', md: 'none' }} pt='15px'>
+        <Flex gap='130px' alignContent={'center'} px='20px' textColor={'blue.400'} 
+        display={{ base: 'flex', sm: 'flex', md: 'none' }} pt='15px'>
           <MobileNavbar><Avatar src={token.pic} h='33px' w='33px' /></MobileNavbar>
           <Box><FaTwitter fontSize={'28px'} /></Box>
         </Flex>
         <Tabs >
-          <TabList display={'flex'} justifyContent={'space-around'} alignItems={'center'} pt='10px' bg='white' zIndex={3}>
-            <Tab w='100%' h='100%' _hover={{ backgroundColor: 'gray.200' }} py={{ base: '12px', sm: '14px', md: '20px' }}>For You</Tab>
-            <Tab w='100%' h='100%' _hover={{ backgroundColor: 'gray.200' }} py={{ base: '12px', sm: '14px', md: '20px' }}>Following</Tab>
+          <TabList display={'flex'} justifyContent={'space-around'} alignItems={'center'} pt='10px' bg='white'>
+            <Tab w='100%' h='100%' _hover={{ backgroundColor: 'gray.200' }} py={{ base: '12px', sm: '14px', md: '20px' }} fontWeight={'bold'}>For You</Tab>
+            <Tab w='100%' h='100%' _hover={{ backgroundColor: 'gray.200' }} py={{ base: '12px', sm: '14px', md: '20px' }} fontWeight={'bold'}>Following</Tab>
           </TabList>
 
-          <TabPanels w='100%' pt='10px'>
+          <TabPanels w='100%' pt='10px' >
             <TabPanel>
               <Box
               >
@@ -90,7 +91,7 @@ const Home = () => {
                     <SkeletonText mt='4' noOfLines={1} spacing='4' skeletonHeight='200' />
                     <SkeletonCircle size='20' />
                     <SkeletonText mt='4' noOfLines={1} spacing='4' skeletonHeight='200' />
-                  </Box> : <VStack spacing={'20px'} pb={{base:'60px',md:'10px'}}>
+                  </Box> : <VStack  pb={{base:'60px',md:'10px'}} spacing={0}>
                     {
                       post?.map(el => (
                         <Post el={el} key={el?._id} />
@@ -102,8 +103,8 @@ const Home = () => {
 
               </Box>
             </TabPanel>
-            <TabPanel>
-              <Box>
+            <TabPanel w='100%'>
+              <Box w={'100%'}>
                 <FollowingUserPost />
               </Box>
             </TabPanel>
@@ -112,7 +113,7 @@ const Home = () => {
       </Flex>
 
 
-      <Box w='40%' display={{ base: 'none', sm: 'none', md: 'none', lg: 'block' }} >
+      <Box w='35%' display={{ base: 'none', sm: 'none', md: 'none', lg: 'block' }} >
         <RightSidebar />
       </Box>
     </Flex>

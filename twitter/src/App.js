@@ -16,7 +16,7 @@ function App() {
    const storeUserInfoFun = async() =>{
 	if( id && getToken){
 		try {
-			const {data} = await axios.get(`https://crazy-dove-vest.cyclic.app/user/userInfo/${id}`)
+			const {data} = await axios.get(`https://curious-plum-stole.cyclic.app/user/userInfo/${id}`)
 			data.token = getToken
 			localStorage.setItem('twitteruser',JSON.stringify(data))
 			setSearchParams({userID:'',token:''})

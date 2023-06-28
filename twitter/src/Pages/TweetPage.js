@@ -48,7 +48,7 @@ const TweetPage = () => {
                     Authorization: `Bearer ${token.token}`
                 }
             }
-            const data = await axios.post(`https://crazy-dove-vest.cyclic.app/post/createpost`, {
+            const data = await axios.post(`https://curious-plum-stole.cyclic.app/post/createpost`, {
                 content: text,
                 picture: pic,
             }, config)

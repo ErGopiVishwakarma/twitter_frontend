@@ -32,7 +32,7 @@ const DeleteModal = ({ postId }) => {
                     Authorization: `Bearer ${token.token}`
                 }
             }
-            axios.delete(`${process.env.REACT_APP_BACKEND_URL}/post/deletepost/${postId}`, config).then(res => {
+            axios.delete(`https://curious-plum-stole.cyclic.app/post/deletepost/${postId}`, config).then(res => {
                 console.log(res)
                 onClose()
                 setHomeUpdate(prev=>!prev)

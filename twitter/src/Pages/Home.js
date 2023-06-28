@@ -27,7 +27,7 @@ const Home = () => {
           Authorization: `Bearer ${token.token}`
         }
       }
-      const { data } = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/post/getallpost`, config)
+      const { data } = await axios.get(`https://crazy-dove-vest.cyclic.app/post/getallpost`, config)
       console.log(data)
       setPost(data)
       setLoading(false)

@@ -48,7 +48,7 @@ const TweetPage = () => {
                     Authorization: `Bearer ${token.token}`
                 }
             }
-            const data = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/post/createpost`, {
+            const data = await axios.post(`https://crazy-dove-vest.cyclic.app/post/createpost`, {
                 content: text,
                 picture: pic,
             }, config)

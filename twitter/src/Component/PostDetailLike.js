@@ -19,7 +19,7 @@ const PostDetailLike = () => {
     //                 Authorization: `Bearer ${token.token}`
     //             }
     //         }
-    //         const data = await axios.put(`${process.env.REACT_APP_BACKEND_URL}/post/like`, {
+    //         const data = await axios.put(`https://crazy-dove-vest.cyclic.app/post/like`, {
     //             postId
     //         }, config)
     //         if (data?.status === 200) {
@@ -43,7 +43,7 @@ const PostDetailLike = () => {
     //                 Authorization: `Bearer ${token.token}`
     //             }
     //         }
-    //         const data = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/post/likerender`, {
+    //         const data = await axios.post(`https://crazy-dove-vest.cyclic.app/post/likerender`, {
     //             postId
     //         }, config)
     //         if (data?.status === 200) {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { memo, useEffect, useState } from 'react'
 import { FaRegComment, FaRetweet, FaStreetView, FaShare } from 'react-icons/fa'
 import { BsHeart, BsFillHeartFill, BsHeartFill, BsShare } from 'react-icons/bs'
 import { Box, Flex, Text, Tooltip } from '@chakra-ui/react'
@@ -112,4 +112,4 @@ const PostDetailLike = () => {
     )
 }
 
-export default PostDetailLike
+export default memo(PostDetailLike)
